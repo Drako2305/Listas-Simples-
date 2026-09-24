@@ -26,9 +26,6 @@ body {
   min-height: 100vh;
 }
 
-/* ------------------------------------------------------------------ */
-/* Top bar                                                             */
-/* ------------------------------------------------------------------ */
 .topbar {
   display: flex;
   flex-wrap: wrap;
@@ -114,9 +111,7 @@ body {
 .task-form button:hover { background: #2fe0b8; transform: translateY(-1px); }
 .task-form button:active { transform: translateY(0); }
 
-/* ------------------------------------------------------------------ */
-/* Legend                                                              */
-/* ------------------------------------------------------------------ */
+
 main { padding: 8px clamp(20px, 5vw, 64px) 64px; }
 
 .legend {
@@ -136,9 +131,7 @@ main { padding: 8px clamp(20px, 5vw, 64px) 64px; }
 .dot--done { background: var(--violet); }
 .dot--null { background: var(--paper-dim); }
 
-/* ------------------------------------------------------------------ */
-/* The chain of nodes                                                  */
-/* ------------------------------------------------------------------ */
+
 .chain {
   display: flex;
   align-items: stretch;
@@ -276,9 +269,7 @@ main { padding: 8px clamp(20px, 5vw, 64px) 64px; }
   border-left: 2px dashed var(--line);
 }
 
-/* ------------------------------------------------------------------ */
-/* Empty state                                                         */
-/* ------------------------------------------------------------------ */
+
 .empty-state {
   color: var(--paper-dim);
   font-family: var(--font-mono);
