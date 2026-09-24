@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lista de Tareas &mdash; Lista Enlazada</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="topbar__title">
+      <span class="topbar__mark">&bull;&#8594;</span>
+      <div>
+        <h1>Task<span>List</span></h1>
+        <p>Una lista enlazada simple, nodo por nodo</p>
+      </div>
+    </div>
+
+    <form id="task-form" class="task-form">
+      <input
+        type="text"
+        id="title-input"
+        placeholder="Título de la tarea"
+        maxlength="60"
+        required
+      />
+      <input
+        type="text"
+        id="description-input"
+        placeholder="Descripción (opcional)"
+        maxlength="120"
+      />
+      <button type="submit">Agregar nodo</button>
+    </form>
+  </header>
+
+  <main>
+    <div class="legend">
+      <span class="legend__item"><i class="dot dot--head"></i> cabecera (first_node)</span>
+      <span class="legend__item"><i class="dot dot--done"></i> completada</span>
+      <span class="legend__item"><i class="dot dot--null"></i> NULL</span>
+    </div>
+
+    <section id="chain" class="chain" aria-live="polite">
+      <!-- Los nodos se generan dinámicamente desde script.js -->
+    </section>
+
+    <p id="empty-state" class="empty-state" hidden>
+      La lista está vacía &mdash; agrega tu primera tarea arriba.
+    </p>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
