@@ -1,17 +1,8 @@
-"""
-task_node.py
-
-Defines the Node used to build the singly linked list of tasks.
-Following the pattern shown in class (Contact / Node classes):
-each node stores the data for one task PLUS a reference ("next")
-to the node that holds the following task in the list.
-"""
-
 
 class TaskNode:
     """A single node of the pending-tasks linked list."""
 
-    _next_id = 1  # simple auto-incrementing id shared by every node
+    _next_id = 1  
 
     def __init__(self, title: str, description: str = ""):
         self.id = TaskNode._next_id
@@ -21,7 +12,7 @@ class TaskNode:
         self.description = description
         self.completed = False
 
-        # Reference to the next node in the list (None = last node)
+     
         self.next = None
 
     def to_dict(self) -> dict:
