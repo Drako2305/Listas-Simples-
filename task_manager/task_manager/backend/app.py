@@ -22,26 +22,19 @@ FRONTEND_DIR = os.path.join(os.path.dirname(__file__), "..", "frontend")
 
 app = Flask(__name__, static_folder=FRONTEND_DIR, static_url_path="")
 
-# A single, in-memory linked list shared by every request.
+
 task_list = TaskList()
 
-# Some starter data so the visualization isn't empty on first run.
+
 task_list.add_task("Study linked lists", "Review nodes and pointers")
 task_list.add_task("Build the API", "Flask endpoints for the task list")
 task_list.add_task("Connect the frontend", "Fetch and render the nodes")
 
 
-# ---------------------------------------------------------------------- #
-# Frontend
-# ---------------------------------------------------------------------- #
 @app.route("/")
 def index():
     return send_from_directory(FRONTEND_DIR, "index.html")
 
-
-# ---------------------------------------------------------------------- #
-# API
-# ---------------------------------------------------------------------- #
 @app.route("/api/tasks", methods=["GET"])
 def get_tasks():
     return jsonify(task_list.to_list())
