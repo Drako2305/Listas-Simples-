@@ -1,12 +1,4 @@
-"""
-task_list.py
 
-TaskList is the singly linked list itself: it only keeps a reference
-to the first node (`first_node`) and the last node (`last_node`),
-exactly like the ContactList example seen in class. Every operation
-(add, search, complete, delete, print) walks the chain node by node
-using each node's `next` reference.
-"""
 
 from .task_node import TaskNode
 
@@ -18,15 +10,13 @@ class TaskList:
         self.first_node = None
         self.last_node = None
 
-    # ------------------------------------------------------------------ #
-    # Insert
-    # ------------------------------------------------------------------ #
+
     def add_task(self, title: str, description: str = "") -> TaskNode:
         """Creates a new node and appends it at the end of the list."""
         new_node = TaskNode(title, description)
 
         if self.first_node is None:
-            # Empty list: the new node is both the first and the last
+       
             self.first_node = new_node
             self.last_node = new_node
         else:
@@ -35,9 +25,7 @@ class TaskList:
 
         return new_node
 
-    # ------------------------------------------------------------------ #
-    # Search
-    # ------------------------------------------------------------------ #
+   
     def find_task(self, task_id: int) -> TaskNode | None:
         """Traverses the list looking for the node with the given id."""
         current_node = self.first_node
@@ -47,9 +35,7 @@ class TaskList:
             current_node = current_node.next
         return None
 
-    # ------------------------------------------------------------------ #
-    # Update
-    # ------------------------------------------------------------------ #
+   
     def toggle_task(self, task_id: int) -> TaskNode | None:
         """Flips the completed state of a task, returns the node or None."""
         node = self.find_task(task_id)
@@ -57,9 +43,7 @@ class TaskList:
             node.completed = not node.completed
         return node
 
-    # ------------------------------------------------------------------ #
-    # Delete
-    # ------------------------------------------------------------------ #
+  
     def delete_task(self, task_id: int) -> bool:
         """Removes the node with the given id, reconnecting its neighbors.
 
@@ -86,9 +70,6 @@ class TaskList:
 
         return False
 
-    # ------------------------------------------------------------------ #
-    # Traverse / export
-    # ------------------------------------------------------------------ #
     def to_list(self) -> list[dict]:
         """Walks the chain and returns every node as a plain dict.
 
