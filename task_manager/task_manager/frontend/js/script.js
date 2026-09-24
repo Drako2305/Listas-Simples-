@@ -1,10 +1,4 @@
-/**
- * script.js
- *
- * Talks to the Flask API and draws the linked list exactly as it is:
- * one <div class="node"> per TaskNode, connected by an arrow that
- * represents each node's `next` pointer, finishing in NULL.
- */
+
 
 const API_URL = "/api/tasks";
 
@@ -79,9 +73,6 @@ function escapeHtml(text) {
   return div.innerHTML;
 }
 
-// ------------------------------------------------------------------ //
-// Actions
-// ------------------------------------------------------------------ //
 formEl.addEventListener("submit", async (event) => {
   event.preventDefault();
 
